@@ -77,14 +77,15 @@ function createProduct() {
 </td>`;
 
    //$listOfProduct.innerHTML += $newProduct
+  // poderia ter feito algo assim
   
    $listOfProduct.insertAdjacentElement('beforeend', $newProduct);
-  //poderia ter sido feito desse jeito, mas ai eu teria que ter criado o elemento 
-  //usando document.createElement antes disso
+  
 
 
   const $Products = document.querySelectorAll('.product');
 
+  // nao precisava ter rodado para todos os produtos, somente para o que foi criado
   for (let product of $Products) {
     product.querySelector('.btn-remove').addEventListener('click', (e) => removeProduct(e));
     product.querySelector('input[placeholder="Quantity"]').addEventListener('change', () => calculateAll());
